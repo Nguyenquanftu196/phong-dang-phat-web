@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1" data-name="Rectangle 1" width="40" height="40" fill="#9b3c52"/>
+    </clipPath>
+  </defs>
+  <g id="Ic_dashboard" clip-path="url(#clip-path)">
+    <g id="Ic_dashboard-2" data-name="Ic_dashboard" transform="translate(0)">
+      <g id="Group_10" data-name="Group 10">
+        <g id="Group_9" data-name="Group 9">
+          <path id="Path_10" data-name="Path 10" d="M39.731,26.539h-1.2V4.8h1.2a1.2,1.2,0,0,0,0-2.4H21.665V1.2a1.2,1.2,0,0,0-2.4,0V2.4H1.2a1.2,1.2,0,1,0,0,2.4H2.4V26.539H1.2a1.2,1.2,0,0,0,0,2.4H16.3L12.158,39.283a1.2,1.2,0,0,0,2.227.891l2.576-6.441h2.306v3.6a1.2,1.2,0,1,0,2.4,0v-3.6h2.306l2.576,6.441a1.2,1.2,0,1,0,2.226-.891L24.635,28.937h15.1a1.2,1.2,0,0,0,0-2.4Zm-20.464,4.8H17.92l.959-2.4h.387Zm2.4,0v-2.4h.387l.959,2.4Zm14.469-4.8H4.8V4.8H36.133Z" transform="translate(-0.002)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_12" data-name="Group 12" transform="translate(7.194 16.947)">
+        <g id="Group_11" data-name="Group 11">
+          <path id="Path_11" data-name="Path 11" d="M96.076,212H91.2a1.2,1.2,0,0,0-1.2,1.2v4.8a1.2,1.2,0,0,0,1.2,1.2h4.876a1.2,1.2,0,0,0,1.2-1.2v-4.8A1.2,1.2,0,0,0,96.076,212Zm-1.2,4.8H92.4v-2.4h2.478Z" transform="translate(-90.001 -211.998)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_14" data-name="Group 14" transform="translate(16.867 12.07)">
+        <g id="Group_13" data-name="Group 13">
+          <path id="Path_12" data-name="Path 12" d="M217,151h-4.8a1.2,1.2,0,0,0-1.2,1.2v9.672a1.2,1.2,0,0,0,1.2,1.2H217a1.2,1.2,0,0,0,1.2-1.2V152.2A1.2,1.2,0,0,0,217,151Zm-1.2,9.672h-2.4V153.4h2.4Z" transform="translate(-211.001 -150.999)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_16" data-name="Group 16" transform="translate(26.459 7.194)">
+        <g id="Group_15" data-name="Group 15">
+          <path id="Path_13" data-name="Path 13" d="M337.074,90H332.2a1.2,1.2,0,0,0-1.2,1.2v14.548a1.2,1.2,0,0,0,1.2,1.2h4.876a1.2,1.2,0,0,0,1.2-1.2V91.2A1.2,1.2,0,0,0,337.074,90Zm-1.2,14.549H333.4V92.4h2.478Z" transform="translate(-330.999 -89.999)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

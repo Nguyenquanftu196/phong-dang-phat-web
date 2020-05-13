@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="41" viewBox="0 0 40 41">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_34" data-name="Rectangle 34" width="40" height="41" transform="translate(0 -0.067)" fill="#851929"/>
+    </clipPath>
+  </defs>
+  <g id="Ic_campaign" transform="translate(0 0.067)" clip-path="url(#clip-path)">
+    <g id="Ic_campaign-2" data-name="Ic_campaign" transform="translate(0 6.08)">
+      <g id="Group_2" data-name="Group 2" transform="translate(34.932 14.389)">
+        <g id="Group_1" data-name="Group 1">
+          <path id="Path_6" data-name="Path 6" d="M441.8,241h-3.6a1.2,1.2,0,0,0,0,2.4h3.6a1.2,1.2,0,0,0,0-2.4Z" transform="translate(-437 -241)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_4" data-name="Group 4" transform="translate(33.733 19.185)">
+        <g id="Group_3" data-name="Group 3">
+          <path id="Path_7" data-name="Path 7" d="M426.445,303.751l-2.4-2.4a1.2,1.2,0,1,0-1.7,1.7l2.4,2.4a1.2,1.2,0,0,0,1.7-1.7Z" transform="translate(-422 -301.001)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_6" data-name="Group 6" transform="translate(33.733 7.194)">
+        <g id="Group_5" data-name="Group 5">
+          <path id="Path_8" data-name="Path 8" d="M426.444,151.352a1.2,1.2,0,0,0-1.7,0l-2.4,2.4a1.2,1.2,0,0,0,1.7,1.7l2.4-2.4A1.2,1.2,0,0,0,426.444,151.352Z" transform="translate(-421.999 -151.001)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_8" data-name="Group 8" transform="translate(0 0)">
+        <g id="Group_7" data-name="Group 7">
+          <path id="Path_9" data-name="Path 9" d="M27.738,61a3.6,3.6,0,0,0-3.557,3.06l-1.094,1.094a10.8,10.8,0,0,1-7.5,3.04H8.393A3.6,3.6,0,0,0,5,70.592H4.8a4.8,4.8,0,1,0,0,9.592H5a3.614,3.614,0,0,0,2.192,2.192v6.2a3.6,3.6,0,1,0,7.194,0v-6h1.2a10.8,10.8,0,0,1,7.5,3.04l1.094,1.094a3.6,3.6,0,0,0,7.154-.537V64.6A3.6,3.6,0,0,0,27.738,61ZM4.8,77.787a2.4,2.4,0,0,1,0-4.8Zm7.194,10.791a1.2,1.2,0,1,1-2.4,0v-6h2.4Zm2.4-8.393h-6a1.2,1.2,0,0,1-1.2-1.2V71.791a1.2,1.2,0,0,1,1.2-1.2h6Zm9.752,3.145a13.106,13.106,0,0,0-7.362-3.091v-9.7a13.105,13.105,0,0,0,7.362-3.091Zm4.8,2.85a1.2,1.2,0,0,1-1.2,1.2h0a1.2,1.2,0,0,1-1.2-1.2V64.6a1.2,1.2,0,1,1,2.4,0Z" transform="translate(0 -61)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
