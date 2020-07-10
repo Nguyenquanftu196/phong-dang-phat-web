@@ -38,6 +38,7 @@ export const styles = (theme) => ({
   listItemIcon: {
     display: "flex",
     alignItems: "center",
+    justifyContent: 'space-between',
     marginRight: theme.spacing(1)
   }
 });

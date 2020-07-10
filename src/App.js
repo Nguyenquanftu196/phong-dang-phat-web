@@ -14,6 +14,9 @@ import { LoginPage } from './pages/Login';
 import { UserManagementPage } from './pages/UserManagement';
 import { DashboardPage } from './pages/Dashboard';
 import { Dashboard } from './components/Dashboard'
+import ProductPage from './pages/admin/product'
+import { ProductDetail } from './components/ProductDetail'
+import { MainCategory } from './components/Admin/Category/MainCategory'
 
 const isAdminWeb = process.env.REACT_APP_IS_ADMIN === 'true'
 
@@ -23,6 +26,7 @@ const renderOnlinePages = () => {
       <Route path="/logout" component={<div>Logout</div>} />
       <DashboardLayout>
         <Switch>
+          <Route path="/product" component={ProductDetail} />
           <Route exact path="/teams" component={TeamsPage} />
           <Route path="/teams/:teamId" component={PlayersPage} />
           <Route exact path="/players" component={PlayersPage} />
@@ -30,7 +34,7 @@ const renderOnlinePages = () => {
           <Route exact path="/tournaments/:tournamentId" component={TeamsPage} />
           <Route path="/squad" component={Dashboard} />
           <Route path="/summary" component={Dashboard} />
-          <Route path="/login" component={LoginPage} /> 
+          <Route path="/login" component={LoginPage} />
           <Route path="/" component={DashboardPage} />
           <Redirect to="/" />
         </Switch>
@@ -45,6 +49,8 @@ const renderOnlineAdminPages = () => {
       <DashboardAdminLayout>
         <Switch>
           <Route path="/users" component={UserManagementPage} />
+          <Route path="/admin/product" component={ProductPage} />
+          <Route path="/admin/category" component={MainCategory} />
           <Redirect to="/users" />
         </Switch>
       </DashboardAdminLayout>
@@ -59,7 +65,7 @@ const renderOfflinePages = () => {
         <Route path="/signup" component={() => <div>Signup</div>} />
         <Route path="/forgot_password" component={() => <div>Signup</div>} />
         <Route path="/reset_password/:code" component={() => <div>Signup</div>} />
-        <Route path="/login" component={LoginPage} /> 
+        <Route path="/login" component={LoginPage} />
         <Redirect to="/login" />
       </Switch>
     </Router>

@@ -6,6 +6,7 @@ export const styles = (theme) => ({
     marginBottom: theme.spacing(2)
   },
   dialogContent: {
+    marginTop: 15
   },
   createUserContainer: {
   },

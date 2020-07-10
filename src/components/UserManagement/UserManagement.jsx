@@ -63,9 +63,7 @@ export const UserManagement = withRouter(
           const offset = limit * page;
           this.setState({ openModal: false })
           try {
-            const users = await User.fetch(limit, offset);
-            console.log('xu ly 1: ', users);
-            
+            const users = await User.fetch(limit, offset);            
             this.setState({ users })
           } catch (error) {
             alert("Server error")

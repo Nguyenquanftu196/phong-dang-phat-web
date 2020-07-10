@@ -22,6 +22,7 @@ export const styles = (theme) => ({
     color: '#fff'
   },
   listItem: {
+    height: 53,
     display: 'flex',
     padding: theme.spacing(2),
     alignItems: 'center',
@@ -86,4 +87,19 @@ export const styles = (theme) => ({
     }),
     marginLeft: 0,
   },
+  titleCate: {
+    color: '#fff',
+    width: '100%',
+    textAlign: 'center'
+  },
+  mainSummary: {
+    margin: 0,
+    padding: 0,
+    width: '100%'
+  },
+  mainCateDetail: {
+    display: 'flex',
+    flexDirection: 'column',
+    paddingBottom: 0
+  }
 });

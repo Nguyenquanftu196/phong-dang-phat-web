@@ -28,17 +28,20 @@ export const LoadingComponent = withStyles(styles)(
     }
 
     render() {
-      const { classes } = this.props
+      const { classes } = this.props      
 
       return (
         <>
-          <div className={classes.contentLoading}>
-            <CircularProgress
-              color={'primary'}
-              size={30}
-              loading={this.state.isLoading}
-            />
-          </div>
+          {
+            this.state.isLoading && (
+              <div className={classes.contentLoading}>
+                <CircularProgress
+                  color={'primary'}
+                  size={40}
+                />
+              </div>
+            )
+          }
         </>
       );
     }
