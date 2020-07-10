@@ -2,6 +2,8 @@
 import React from 'react';
 import { withStyles, Tabs, Tab } from '@material-ui/core';
 import { styles } from './Dashboard.style';
+import { SlideImage } from "../SlideImage";
+import { ItemCategory } from '../ItemCategory'
 
 export const Dashboard = withStyles(styles)(
   class extends React.Component {
@@ -13,12 +15,17 @@ export const Dashboard = withStyles(styles)(
       }
     }
 
+    componentDidMount(){
+      
+    }
+
     render() {
       const { classes, match } = this.props
 
       return (
         <>
-          <h3>home</h3>
+          <SlideImage />
+          <ItemCategory />
         </>
       )
     }

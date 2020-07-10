@@ -5,12 +5,14 @@ import { withTranslation } from 'react-i18next';
 import { withStyles, Drawer, Typography, IconButton, Divider } from '@material-ui/core';
 import { styles } from './MenuDrawerAdmin.style';
 import classnames from 'classnames';
-import IconEmployees from './assets/Ic_employee.svg';
 import { Link, withRouter } from 'react-router-dom';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { Logout } from 'mdi-material-ui';
 import Cookies from 'js-cookie';
 import { COOKIE_USER } from '../../constants/session';
+import StorageIcon from '@material-ui/icons/Storage';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import PollIcon from '@material-ui/icons/Poll';
 
 export const MenuDrawerAdmin = withRouter(
   withTranslation()(
@@ -57,9 +59,27 @@ export const MenuDrawerAdmin = withRouter(
                   className={classnames(classes.listItem, { active: location.pathname === '/users' })}
                 >
                   <div className={classes.listItemIcon}>
-                    <img src={IconEmployees} height={20} alt="icon" />
+                    <AccountBoxIcon />
                   </div>
                   <Typography>{t('Users')}</Typography>
+                </Link>
+                <Link
+                  to="/admin/product"
+                  className={classnames(classes.listItem, { active: location.pathname === '/admin/product' })}
+                >
+                  <div className={classes.listItemIcon}>
+                    <StorageIcon />
+                  </div>
+                  <Typography>{t('Product')}</Typography>
+                </Link>
+                <Link
+                  to="/admin/category"
+                  className={classnames(classes.listItem, { active: location.pathname === '/admin/category' })}
+                >
+                  <div className={classes.listItemIcon}>
+                    <PollIcon />
+                  </div>
+                  <Typography>{t('Category')}</Typography>
                 </Link>
               </div>
               <div className={classes.grow} />

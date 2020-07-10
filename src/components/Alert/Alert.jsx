@@ -19,7 +19,8 @@ export const Alert = withStyles(styles)(
     }
 
     render() {
-      const { message, open, security } = this.props;
+      const { message, open, security, classes } = this.props;
+      
       return (
         <Snackbar
           open={open}
@@ -29,7 +30,7 @@ export const Alert = withStyles(styles)(
             horizontal: 'center',
           }}
           onClose={this.props.onCloseAlert}>
-          <MuiAlert elevation={6} variant="filled" onClose={this.props.onCloseAlert} severity={security}>
+          <MuiAlert elevation={6} variant="filled" onClose={this.props.onCloseAlert} severity={security} style={{ boxShadow: 'none' }}>
             {message}
           </MuiAlert>
         </Snackbar>

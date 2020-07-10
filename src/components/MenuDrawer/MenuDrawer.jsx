@@ -6,15 +6,17 @@ import { Logout } from 'mdi-material-ui';
 import { withStyles, Drawer, Typography, IconButton, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails } from '@material-ui/core';
 import { styles } from './MenuDrawer.style';
 import classnames from 'classnames';
-import IconDashboard from './assets/dashboard.svg';
-import IconOrder from './assets/Ic_orders.svg';
-import IconEmployees from './assets/Ic_employee.svg';
-import IconClients from './assets/Ic_client.svg';
 import { Link, withRouter } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { COOKIE_USER } from '../../constants/session';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import BallotIcon from '@material-ui/icons/Ballot'
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import GroupIcon from '@material-ui/icons/Group';
+import SubtitlesIcon from '@material-ui/icons/Subtitles';
+import { Category } from '../../models/category'
+import { map } from 'lodash'
 
 export const MenuDrawer = withRouter(
   withTranslation()(
@@ -31,6 +33,7 @@ export const MenuDrawer = withRouter(
 
           this.state = {
             open: false,
+            categories: []
           };
         }
 
@@ -39,8 +42,18 @@ export const MenuDrawer = withRouter(
           window.location.assign('/');
         };
 
+        listCategory = async () => {
+          const result = await Category.list(null, 0)
+          this.setState({ categories: result.rows })
+        }
+
+        componentDidMount() {
+          this.listCategory()
+        }
+
         render() {
           const { classes, t, location, open, session } = this.props;
+          const { categories } = this.state
 
           return (
             <Drawer
@@ -53,21 +66,36 @@ export const MenuDrawer = withRouter(
               }}
             >
               <div className={classes.drawerHeader}>
+                <h3 className={classes.titleCate}>{t("Menu")}</h3>
                 <IconButton onClick={this.props.onDrawerClose}>
                   <ChevronLeftIcon className={classes.chevronIcon} />
                 </IconButton>
               </div>
-              {/* <Divider /> */}
               <div className={classes.innerDrawer}>
-                <Link
-                  to="/"
-                  className={classnames(classes.listItem)}
-                >
-                  <div className={classes.listItemIcon}>
-                    <img src={IconDashboard} height={20} alt="icon" />
-                  </div>
-                  <Typography>{t('Home')}</Typography>
-                </Link>
+                <ExpansionPanel style={{ backgroundColor: '#1f8b48', boxShadow: 'none', color: '#fff' }}>
+                  <Link className={classnames(classes.listItem)} >
+                    <ExpansionPanelSummary
+                      expandIcon={<ExpandMoreIcon style={{ color: '#fff' }} />}
+                      aria-controls="panel1a-content"
+                      id="panel1a-header"
+                      classes={{ root: classes.mainSummary }}
+                    >
+                      <div className={classes.listItemIcon}>
+                        <BallotIcon />
+                      </div>
+                      <Typography>{t('Category_1')}</Typography>
+                    </ExpansionPanelSummary>
+                  </Link>
+                  <ExpansionPanelDetails classes={{ root: classes.mainCateDetail }}>
+                    {
+                      map(categories, cate => (
+                        <Link className={classnames(classes.listItem)}>
+                          <Typography>{(this.props.i18n.language === 'en') ? cate.nameEN : cate.nameVN}</Typography>
+                        </Link>
+                      ))
+                    }
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
                 <Link
                   to="/players"
                   className={classnames(classes.listItem, {
@@ -75,7 +103,7 @@ export const MenuDrawer = withRouter(
                   })}
                 >
                   <div className={classes.listItemIcon}>
-                    <img src={IconOrder} height={20} alt="icon" />
+                    <AccountBoxIcon />
                   </div>
                   <Typography>{t('Players')}</Typography>
                 </Link>
@@ -84,7 +112,7 @@ export const MenuDrawer = withRouter(
                   className={classnames(classes.listItem, { active: location.pathname.includes('/teams') })}
                 >
                   <div className={classes.listItemIcon}>
-                    <img src={IconEmployees} height={20} alt="icon" />
+                    <GroupIcon />
                   </div>
                   <Typography>{t('Teams')}</Typography>
                 </Link>
@@ -95,40 +123,10 @@ export const MenuDrawer = withRouter(
                   })}
                 >
                   <div className={classes.listItemIcon}>
-                    <img src={IconClients} height={20} alt="icon" />
+                    <SubtitlesIcon />
                   </div>
                   <Typography>{t('Tournaments')}</Typography>
                 </Link>
-                <ExpansionPanel style={{ backgroundColor: '#1f8b48', boxShadow: 'none', color: '#fff' }}>
-                  <ExpansionPanelSummary
-                    expandIcon={<ExpandMoreIcon style={{ color: '#fff' }}/>}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                  >
-                    <Typography>Expansion Panel 1</Typography>
-                  </ExpansionPanelSummary>
-                  <ExpansionPanelDetails>
-                    <Typography>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                      sit amet blandit leo lobortis eget.
-                    </Typography>
-                  </ExpansionPanelDetails>
-                </ExpansionPanel>
-                <ExpansionPanel style={{ backgroundColor: '#1f8b48', boxShadow: 'none', color: '#fff' }}>
-                  <ExpansionPanelSummary
-                    expandIcon={<ExpandMoreIcon style={{ color: '#fff' }}/>}
-                    aria-controls="panel2a-content"
-                    id="panel2a-header"
-                  >
-                    <Typography className={classes.heading}>Expansion Panel 2</Typography>
-                  </ExpansionPanelSummary>
-                  <ExpansionPanelDetails>
-                    <Typography>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                      sit amet blandit leo lobortis eget.
-                    </Typography>
-                  </ExpansionPanelDetails>
-                </ExpansionPanel>
               </div>
               <div className={classes.grow} />
               <div>
@@ -141,18 +139,18 @@ export const MenuDrawer = withRouter(
                       <Typography>{t('Logout')}</Typography>
                     </div>
                   ) : (
-                    <Link
-                      to="/login"
-                      className={classnames(classes.listItem, {
-                        active: location.pathname.includes('/login')
-                      })}
-                    >
-                      <div className={classes.listItemIcon}>
-                        <Logout />
-                      </div>
-                      <Typography>{t('Login')}</Typography>
-                    </Link>
-                  )
+                      <Link
+                        to="/login"
+                        className={classnames(classes.listItem, {
+                          active: location.pathname.includes('/login')
+                        })}
+                      >
+                        <div className={classes.listItemIcon}>
+                          <Logout />
+                        </div>
+                        <Typography>{t('Login')}</Typography>
+                      </Link>
+                    )
                 }
                 {/* <div className={classes.listItem} onClick={this.onLogout}>
                   <div className={classes.listItemIcon}>
